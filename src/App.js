@@ -1,11 +1,13 @@
 import './App.css';
+import Container from 'react-bootstrap/Container'
 import Tweet from './components/tweet'
+
 
 function App() {
   return (
-    <div className="App">
-      <Tweet/>
-    </div>
+    <Container fluid>
+        <Tweet/>
+    </Container>
   );
 }
 

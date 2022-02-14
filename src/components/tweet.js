@@ -3,7 +3,11 @@ import ReactDOM from 'react-dom';
 import ImgUser from '../assets/avatar.jpg'
 import '../css/tweet.css'
 import Form from 'react-bootstrap/Form'
+import button from 'react-bootstrap/Button'
 import  'bootstrap/dist/css/bootstrap.min.css' ;
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 
 class EssayForm extends React.Component {
@@ -54,37 +58,31 @@ class EssayForm extends React.Component {
   
     render() {
       return (
-        <div>
-
-        <Form>
-          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" placeholder="name@example.com" />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-            <Form.Label>Example textarea</Form.Label>
-            <Form.Control as="textarea" rows={3} />
-          </Form.Group>
-        </Form>
-
-
-
-          <form onSubmit={this.handleSubmit}>
-            <label>
-              <img src={ImgUser} alt='' width='54px'></img>
-              <textarea value={this.state.value} onChange={this.handleChange} />
-            </label>
-            <input type="submit" value="Tweetar" />
-          </form>
-          <div>
-          <span>{this.getListaTweets(this.state.tweets)}</span>
-          </div>
-        </div>
+        <Container>
+          <Col></Col>
+          <Col>
+            <Row>
+              <Form onSubmit={this.handleSubmit}>
+                <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                  <Form.Label><img src={ImgUser} alt='' width='54px'></img></Form.Label>
+                  <Form.Control as="textarea" rows={3} value={this.state.value} onChange={this.handleChange}/>
+                </Form.Group>
+                <div className='div-btn'>
+                  <button type="submit" value="Tweetar" active className='TextArea-btn'>Tweetar</button>
+                </div>
+              </Form>
+            </Row>
+            <Col>
+              <span>{this.getListaTweets(this.state.tweets)}</span>
+            </Col>   
+          </Col>
+          <Col></Col>
+        </Container>
       );
     }
   }
   ReactDOM.render(
-    <EssayForm />,
+    <EssayForm key=""/>,
     document.getElementById('root')
   );
 
