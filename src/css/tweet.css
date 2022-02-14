@@ -1,0 +1,28 @@
+
+
+img{
+    border-radius: 50%;
+}
+.TweetArea{
+    display: flex;
+    margin: 10px;
+}
+.TweetArea-TweetPost{
+    display: flex;
+    flex-direction: column;
+}
+.TweetArea-tweet{
+    padding: 8px;
+}
+.tweet{
+    font-size: 18px;
+}
+.user{
+    font-weight: bold;
+    font-size: 16px;
+    padding-left: 6px;
+}
+.userName{
+    font-size: 14px;
+    padding-left: 6px;
+}
