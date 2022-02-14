@@ -14,7 +14,7 @@ class EssayForm extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        value: 'Escreva algo...',
+        value: '',
         tweets: []
       };
   
@@ -65,7 +65,7 @@ class EssayForm extends React.Component {
               <Form onSubmit={this.handleSubmit}>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                   <Form.Label><img src={ImgUser} alt='' width='54px'></img></Form.Label>
-                  <Form.Control as="textarea" rows={3} value={this.state.value} onChange={this.handleChange}/>
+                  <Form.Control placeholder='O que está acontecendo...' as="textarea" rows={3} value={this.state.value} onChange={this.handleChange}/>
                 </Form.Group>
                 <div className='div-btn'>
                   <button type="submit" value="Tweetar" active className='TextArea-btn'>Tweetar</button>
