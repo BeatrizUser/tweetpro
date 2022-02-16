@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 import ImgUser from '../assets/avatar.jpg'
 import '../css/tweet.css'
 import Form from 'react-bootstrap/Form'
-import button from 'react-bootstrap/Button'
+import Button from 'react-bootstrap/Button'
 import  'bootstrap/dist/css/bootstrap.min.css' ;
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import ListaTweets from './ListaTweets';
 
 
 class EssayForm extends React.Component {
@@ -37,7 +38,7 @@ class EssayForm extends React.Component {
     getListaTweets(lista){
       return lista.map((tweets, i)=>{
         return(
-          <div className='TweetArea'>
+          <div className='TweetArea' height='5px'>
             <div className='TweetArea-imagem'>
               <img src={ImgUser} alt='' width='54px'></img>
             </div>
@@ -68,11 +69,12 @@ class EssayForm extends React.Component {
                   <Form.Control placeholder='O que está acontecendo...' as="textarea" rows={3} value={this.state.value} onChange={this.handleChange}/>
                 </Form.Group>
                 <div className='div-btn'>
-                  <button type="submit" value="Tweetar" active className='TextArea-btn'>Tweetar</button>
+                  <Button type="submit" value="Tweetar" active className='TextArea-btn'>Tweetar</Button>
                 </div>
               </Form>
             </Row>
             <Col>
+              <ListaTweets/>
               <span>{this.getListaTweets(this.state.tweets)}</span>
             </Col>   
           </Col>

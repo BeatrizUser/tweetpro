@@ -33,6 +33,7 @@ img{
 .TweetArea{
     display: flex;
     margin: 10px;
+    height: auto;
     transition: all ease 1s;
 }
 .TweetArea-TweetPost{
