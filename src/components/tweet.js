@@ -69,13 +69,13 @@ class EssayForm extends React.Component {
                   <Form.Control placeholder='O que está acontecendo...' as="textarea" rows={3} value={this.state.value} onChange={this.handleChange}/>
                 </Form.Group>
                 <div className='div-btn'>
-                  <Button type="submit" value="Tweetar" active className='TextArea-btn'>Tweetar</Button>
+                  <button type="submit" value="Tweetar" active className='TextArea-btn'>Tweetar</button>
                 </div>
               </Form>
             </Row>
             <Col>
-              <ListaTweets/>
               <span>{this.getListaTweets(this.state.tweets)}</span>
+              <ListaTweets/>
             </Col>   
           </Col>
           <Col></Col>

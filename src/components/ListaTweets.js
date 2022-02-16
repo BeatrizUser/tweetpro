@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import '../css/tweet.css'
 import  'bootstrap/dist/css/bootstrap.min.css' ;
-import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
 import axios from "axios";
 import ImgUser from "../assets/avatar.jpg"
@@ -40,6 +39,8 @@ class ListaTweets extends React.Component {
 
     handleSubmit = async (event)=> {
       this.GetListaTweets()
+      this.getListaTweets(this.state.data)
+      console.log("ok")
       event.preventDefault();
     }
 
@@ -52,8 +53,8 @@ class ListaTweets extends React.Component {
             </div>
             <div className='TweetArea-TweetPost'>
               <div className='TweetArea-Identificação'>
-                <span className='user'>{tweet.username}</span>
-                <span className='userName'>{tweet.username}</span>
+                <span className='user'>{tweet.name.firstname}</span>
+                <span className='userName'>@{tweet.username}</span>
               </div>
               <div className='TweetArea-tweet'>
                 <span className='tweet'>{tweet.phone}</span>
@@ -68,7 +69,7 @@ class ListaTweets extends React.Component {
       return (
         <Col>
         <form onSubmit={this.handleSubmit}>
-          <button type="submit" value="Atualizar" active className='TextArea-btn'>Atualizar</button>
+          <button type="submit" value="Atualizar" active className='TextArea-btn'>Listar Tweets</button>
         </form>
           <form>{this.getListaTweets(this.state.data)}</form>
         </Col>
